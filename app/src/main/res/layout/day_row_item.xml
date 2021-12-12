@@ -13,13 +13,13 @@
     <TextView
         android:id="@+id/txt_day"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="21"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="26sp"
-        android:text="21"
-        android:layout_gravity="center"
-        android:fontFamily="sans-serif-condensed-light"/>
-
+        android:textSize="30sp" />
 
 </androidx.cardview.widget.CardView>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.PlayActivity"
-    android:background="@color/white"
+    android:background="@drawable/banner3"
     android:orientation="vertical">
     <TextView
         android:id="@+id/txt_content_play"
@@ -13,7 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="30sp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:fontFamily="monospace"
         android:text="ABC"
         android:layout_gravity="center"/>
     <ImageView
@@ -27,7 +29,7 @@
         android:id="@+id/txt_timer_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="26dp"
         android:text="khjgfjh"
         android:layout_gravity="center"
@@ -38,6 +40,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Hoàn thành"/>
-
+        android:text="Hoàn thành"
+        android:background="@drawable/btn_start"/>
 </LinearLayout>

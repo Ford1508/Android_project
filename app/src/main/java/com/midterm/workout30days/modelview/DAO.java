@@ -18,7 +18,7 @@ public class DAO {
     public DatabaseReference getDatabaseReference(Context context, String path){
         FirebaseApp.initializeApp(context);
         DatabaseReference myRef;
-        myRef = FirebaseDatabase.getInstance().getReference(path);
+        myRef = FirebaseDatabase.getInstance("https://daysworkout-37268-default-rtdb.firebaseio.com").getReference(path);
         return myRef;
     }
 }

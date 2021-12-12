@@ -68,13 +68,10 @@ public class ExerciseActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == PLAY_ACTIVITY_REQUEST_CODE)
-        {
-            if(resultCode == RESULT_OK)
-            {
+        if (requestCode == PLAY_ACTIVITY_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
                 boolean check = data.getExtras().getBoolean("check");
-                if(check == true)
-                {
+                if (check == true) {
                     createCache();
                     finish();
                 }
@@ -105,16 +102,14 @@ public class ExerciseActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         txtDayExercise.setText(bundle.getString("day_content"));
         day_exercises = bundle.getString("day_excercises");
-        if(bundle.getBoolean("day_completed") == true)
-        {
+        if (bundle.getBoolean("day_completed") == true) {
             txtCheckComplete.setText("Đã hoàn thành");
             //btnStart.setText("Đã hoàn thành");
-            btnStart.setEnabled(false);
+            btnStart.setVisibility(View.INVISIBLE);
         }
-        if(day_exercises != null){
+        if (day_exercises != null) {
             String[] words = day_exercises.split(",");
-            for(String word : words)
-            {
+            for (String word : words) {
                 dao.getInstance().getDatabaseReference(this, "Excercise").child(word)
                         .addValueEventListener(new ValueEventListener() {
                             @Override
@@ -131,5 +126,9 @@ public class ExerciseActivity extends AppCompatActivity {
                         });
             }
         }
+    }
+
+    public void back(View view) {
+        startActivity(new Intent(ExerciseActivity.this, MainActivity.class));
     }
 }

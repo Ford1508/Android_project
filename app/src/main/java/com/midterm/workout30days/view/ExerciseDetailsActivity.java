@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -38,6 +39,8 @@ public class ExerciseDetailsActivity extends AppCompatActivity {
 
         loadData();
 
+        txtDepscribeDetails.setText(Html.fromHtml(getString(R.string.your_string_here)));
+
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +70,4 @@ public class ExerciseDetailsActivity extends AppCompatActivity {
                     }
                 });
     }
-
-
 }

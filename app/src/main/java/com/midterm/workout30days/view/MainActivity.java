@@ -2,18 +2,19 @@ package com.midterm.workout30days.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.loader.content.AsyncTaskLoader;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Paint;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,18 +34,17 @@ import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
-    ImageButton exitApp;
     DaysAdapter daysAdapter;
     public ArrayList<Day> arrayList;
     AppRoomDatabase appRoomDatabase;
     UserRoomDatabaseDao userRoomDatabaseDao;
-    View newView;
+    Button button, btnBMI;
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.rv_day);
-        exitApp = findViewById(R.id.btn_exit_app);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 6);
         recyclerView.setLayoutManager(gridLayoutManager);
         arrayList = new ArrayList<Day>();
@@ -52,21 +52,43 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(daysAdapter);
         appRoomDatabase = AppRoomDatabase.getInstance(this);
         userRoomDatabaseDao = appRoomDatabase.userRoomDatabaseDao();
+        button = findViewById(R.id.youtube);
+        btnBMI = findViewById(R.id.btn_bmi);
+        textView = findViewById(R.id.txt);
         loadData();
         daysAdapter.notifyDataSetChanged();
         readCacheData();
-        exitApp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialogExitEvent();
-            }
-        });
         recyclerView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
             public void onScrollChange(View view, int i, int i1, int i2, int i3) {
                 daysAdapter.notifyDataSetChanged();
             }
         });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoUrl("https://www.youtube.com/c/D%C3%A2nTh%E1%BB%83H%C3%ACnhTV");
+            }
+        });
+        textView.setPaintFlags(textView.getPaintFlags()|Paint.UNDERLINE_TEXT_FLAG);
+
+        //tinh BMI
+        btnBMI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, BMIActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void gotoUrl(String s) {
+        Uri uri = Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW, uri));
+    }
+
+    public void exit(View view) {
+        dialogExitEvent();
     }
 
     @Override
@@ -91,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         AlertDialog alertDialog = altdial.create();
-        alertDialog.setTitle("Dialog Header");
+        alertDialog.setTitle("Thông báo!");
         alertDialog.show();
     }
 
@@ -201,5 +223,4 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
 }

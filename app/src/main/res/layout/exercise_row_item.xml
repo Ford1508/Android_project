@@ -19,10 +19,12 @@
            android:layout_height="70dp" />
        <TextView
            android:id="@+id/txt_practise_name"
-           android:layout_width="wrap_content"
+           android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:textColor="@color/black"
-           android:textSize="16dp"
+           android:textSize="20dp"
+           android:fontFamily="sans-serif-medium"
+           android:textStyle="italic"
            android:text="jvbhjsdbvk"
            android:layout_gravity="center"
            android:layout_marginLeft="10dp"/>
