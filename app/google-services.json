@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1001092704211",
+    "firebase_url": "https://daysworkout-37268-default-rtdb.firebaseio.com",
+    "project_id": "daysworkout-37268",
+    "storage_bucket": "daysworkout-37268.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001092704211:android:1d958799067c8cdc9ef126",
+        "android_client_info": {
+          "package_name": "com.midterm.workout30days"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1001092704211-ieo045vdvolrj20n2g8a7rbjv18t2ufl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAemprL2M3QkXYt6xZeDTP979PqB40pUOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1001092704211-ieo045vdvolrj20n2g8a7rbjv18t2ufl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
