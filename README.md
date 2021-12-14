@@ -21,3 +21,5 @@
 <a href='https://www.linkpicture.com/view.php?img=LPic61b838bbdb0dd2007852265'><img src='https://www.linkpicture.com/q/Ảnh9.jpg' type='image'></a>
 # Kết quả và lịch sử lưu BMI
 <a href='https://www.linkpicture.com/view.php?img=LPic61b838bbdb0dd2007852265'><img src='https://www.linkpicture.com/q/Ảnh10.jpg' type='image'></a>
+# Video demo
+https://drive.google.com/drive/folders/1i_5hvmixtunG1GixAvE7VO1fAN7eIL9p?usp=sharing
